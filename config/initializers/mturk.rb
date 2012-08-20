@@ -12,6 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-MTURK_CONFIG = YAML.load_file(File.expand_path('../../mturk.yml',  __FILE__))
+MTURK_CONFIG = YAML.load(ERB.new(File.read(File.expand_path('../../mturk.yml',  __FILE__))).result)
 
 MTurkUtils.init
